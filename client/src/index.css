@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Warna kustom untuk tema museum kenangan dengan abu-abu dan merah */
+:root {
+  --background: #F5F5F5;
+  --foreground: #333333;
+  --muted: #E0E0E0;
+  --muted-foreground: #666666;
+  --popover: #FFFFFF;
+  --popover-foreground: #333333;
+  --card: #FFFFFF;
+  --card-foreground: #333333;
+  --border: #D0D0D0;
+  --input: #E0E0E0;
+  --primary: #9D2933;
+  --primary-foreground: #FFFFFF;
+  --secondary: #505050;
+  --secondary-foreground: #FFFFFF;
+  --accent: #9D8493;
+  --accent-foreground: #FFFFFF;
+  --destructive: #C41E3A;
+  --destructive-foreground: #FFFFFF;
+  --ring: #9D2933;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: #1A1A1A;
+  --foreground: #F5F5F5;
+  --muted: #2C2C2C;
+  --muted-foreground: #A0A0A0;
+  --popover: #1A1A1A;
+  --popover-foreground: #F5F5F5;
+  --card: #252525;
+  --card-foreground: #F5F5F5;
+  --border: #3D3D3D;
+  --input: #3D3D3D;
+  --primary: #C93756;
+  --primary-foreground: #FFFFFF;
+  --secondary: #6E6E6E;
+  --secondary-foreground: #FFFFFF;
+  --accent: #9D7989;
+  --accent-foreground: #FFFFFF;
+  --destructive: #E54B63;
+  --destructive-foreground: #FFFFFF;
+  --ring: #C93756;
+}
+
+/* Animasi untuk memory cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-fade-in {
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+/* Animasi tambahan untuk hover efek */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(157, 41, 51, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(157, 41, 51, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(157, 41, 51, 0);
+  }
+}
+
+.hover-glow:hover {
+  animation: pulseGlow 1.5s infinite;
+}
+
+/* Font styling */
+body {
+  font-family: 'Georgia', serif;
+  color: #333333;
+  background-color: #F5F5F5;
+  background-image: radial-gradient(#DDDDDD 0.5px, transparent 0.5px);
+  background-size: 15px 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Georgia', serif;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9D2933;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7D2128;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply antialiased;
+  }
+}
+
